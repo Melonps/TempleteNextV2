@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  cursor: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2258%22%20height%3D%2258%22%20viewBox%3D%220%200%2058%2058%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2216.5%22%20r%3D%225.5%22%20fill%3D%22%23DF929B%22%2F%3E%0A%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2216.5%22%20r%3D%2215.5%22%20stroke%3D%22%23DF929B%22%20stroke-width%3D%222%22%2F%3E%0A%3C%2Fsvg%3E%0A'),auto;
+    
+}  
 
 ::-webkit-scrollbar {
     width: 16px;       
@@ -24,4 +33,34 @@ a {
 
 a:hover{
   color: #62cde0;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  padding: 2em;
+  background-color: #242424;
+  border-radius: 1em;
+  transform: translate(-50%, -50%);
+  outline: transparent;
+  box-shadow:  20px 20px 60px #cad9d546,
+              -20px -20px 60px #ffffff75;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+a:hover, button:hover {
+  cursor: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2258%22%20height%3D%2258%22%20viewBox%3D%220%200%2058%2058%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2216.5%22%20r%3D%225.5%22%20fill%3D%22%2362CDE0%22%2F%3E%0A%3Ccircle%20cx%3D%2216.5%22%20cy%3D%2216.5%22%20r%3D%2215.5%22%20stroke%3D%22%2362CDE0%22%20stroke-width%3D%222%22%2F%3E%0A%3C%2Fsvg%3E%0A'),auto;
 }
