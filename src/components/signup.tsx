@@ -1,11 +1,10 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react'
 import { auth } from '../firebase/firebase'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, User } from 'firebase/auth'
 import { FirebaseError } from '@firebase/util'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
