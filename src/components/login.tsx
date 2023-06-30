@@ -6,11 +6,13 @@ import { FirebaseError } from '@firebase/util'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
+import { useRouter } from 'next/router'
 
 const SignIn: React.FC = () => {
     const [signInEmail, setSignInEmail] = useState<string>('')
     const [signInPassword, setSignInPassword] = useState<string>('')
     const [user, setUser] = useState<User | null>(null)
+    const router = useRouter()
 
     // Firebaseのユーザーのサインイン状態を監視するためのuseEffectフック
     useEffect(() => {
@@ -30,6 +32,7 @@ const SignIn: React.FC = () => {
             // FirebaseのsignInWithEmailAndPasswordメソッドを使用して、ユーザーのサインインを試行する
             await signInWithEmailAndPassword(auth, signInEmail, signInPassword)
             console.log('[Succeeded] Sign in')
+            router.push('/home')
         } catch (error) {
             if (error instanceof FirebaseError) {
                 alert(error.message)
