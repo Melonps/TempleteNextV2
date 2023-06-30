@@ -67,7 +67,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <div className={`${inter.className} flex min-h-screen flex-col items-center justify-between p-24`}>
+            <div className={`${inter.className} app flex min-h-screen flex-col items-center justify-between p-24`}>
                 <Header />
                 <Component {...pageProps} />
                 <Footer />

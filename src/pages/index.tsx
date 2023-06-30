@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase/firebase'
-import SignOut from '../components/signout'
+
 import LogIn from '../components/login'
-import { Typography } from '@mui/material'
+import Home from '@/pages/home'
+import SignUpPage from './signuppage'
 
 const Index: React.FC = () => {
     const [user, setUser] = useState<any>({})
@@ -14,22 +15,7 @@ const Index: React.FC = () => {
         })
     }, [])
 
-    return (
-        <main className="flex items-center justify-center ">
-            {user ? (
-                <div className="text-center">
-                    <Typography component="h1" variant="h3">
-                        Home
-                    </Typography>
-                    <LogIn />
-                </div>
-            ) : (
-                <div>
-                    <SignOut />
-                </div>
-            )}
-        </main>
-    )
+    return <>{user ? <SignUpPage /> : <Home />}</>
 }
 
 export default Index

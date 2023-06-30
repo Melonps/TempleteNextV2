@@ -51,7 +51,7 @@ const SignIn: React.FC = () => {
         <>
             {user ? (
                 // ユーザーがサインインしている場合はホームページへのリンクを表示
-                <Link href={`/home`} />
+                <Link href={`/home`} passHref />
             ) : (
                 // ユーザーがサインインしていない場合はサインインフォームを表示
                 <>
@@ -86,7 +86,7 @@ const SignIn: React.FC = () => {
                         <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 4, mx: 'auto' }}>
                             Log In
                         </Button>
-                        <Typography variant="body2" sx={{ mt: 2 }}>
+                        <Typography variant="body2" sx={{ mt: 2 }} align="center">
                             新規ユーザ登録は<Link href={'/signuppage'}>こちら</Link>
                         </Typography>
                     </form>
